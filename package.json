@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "scripts": {
+    "start": "node server/server.js",       
+    "build": "npm --prefix client run build && npm --prefix dashboard run build", 
+    "client": "npm start --prefix client",  
+    "admin": "npm start --prefix admin",    
+    "dev": "concurrently \"npm run client\" \"npm run dashboard\" \"npm run server\""  
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "concurrently": "^6.0.0"   
+  }
+}
